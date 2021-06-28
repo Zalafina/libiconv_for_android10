@@ -1,0 +1,33 @@
+
+
+cc_library_shared {
+
+    name: "libiconv",
+    cflags: [
+        "-Wno-multichar",
+        "-Wno-unused-parameter",
+        "-Wno-unused-const-variable",
+        "-Wno-missing-field-initializers",
+        "-Wno-parentheses-equality",
+        "-Wno-unused-variable",
+        "-DLIBDIR=\"c\"",
+        "-DLIBICONV_PLUG",
+        "-DBUILDING_LIBICONV",
+        "-DIN_LIBRARY",
+    ],
+
+    srcs: [
+        "lib/iconv.c",
+        "lib/relocatable.c",
+        "libcharset/lib/localcharset.c",
+    ],
+
+    local_include_dirs: [
+        "include",
+        "libcharset",
+        "lib",
+        "libcharset/include",
+        "srclib",
+    ],
+
+}
