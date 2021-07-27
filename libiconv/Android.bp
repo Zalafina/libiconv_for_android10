@@ -10,10 +10,14 @@ cc_library_shared {
         "-Wno-missing-field-initializers",
         "-Wno-parentheses-equality",
         "-Wno-unused-variable",
-        "-DLIBDIR=\"c\"",
-        "-DLIBICONV_PLUG",
+        "-DANDROID",
+        "-DIN_LIBINTL",
+        "-DENABLE_RELOCATABLE=1",
+        "-DNO_XMALLOC",
+        "-DHAVE_CONFIG_H",
         "-DBUILDING_LIBICONV",
         "-DIN_LIBRARY",
+        "-DLIBICONV_PLUG",
     ],
 
     srcs: [
